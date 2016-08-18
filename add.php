@@ -84,7 +84,7 @@
                      $sql = "INSERT INTO bugView VALUES (NULL,'$name','$summary','$category','$submitter')";
                      mysqli_query($db,$sql);
                      mysqli_close($db);
-                     header('Location: addbugs.php?category=all');
+                     header('Location: add.php?category=all');
                  }
                  else {
                                  header('Location: index.php');
