@@ -81,7 +81,7 @@
                                         $submitter = "Anonymous";
                      }
 
-                     $sql = "INSERT INTO bugView VALUES (NULL,'$title','$summary','$category','$submitter')";
+                     $sql = "INSERT INTO diaryTable VALUES (NULL,'$title','$summary','$category','$submitter')";
                      mysqli_query($db,$sql);
                      mysqli_close($db);
                      header('Location: add.php?category=all');

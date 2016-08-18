@@ -1,6 +1,6 @@
 
 
-// is this bit below required
+
 <?php
 
  include_once('dbaseconn.php');
@@ -11,7 +11,7 @@
  }
 
  ?>
-//
+
 
 
 
@@ -54,7 +54,7 @@
             <?php
                              include ("dbaseconn.php");
              if($_GET['category']=="work"){
-                                 $getbugs = "SELECT * FROM Bugs where category like '%work%'";
+                                 $getbugs = "SELECT * FROM diaryTable where category like '%work%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
                                          echo "<h3>". $row['name'] . "</h3>";
@@ -62,7 +62,7 @@
                      echo "<p>". $row['summary'] . "</p>";
                  }
              }elseif($_GET['category']=="university"){
-                                 $getbugs = "SELECT * FROM Bugs where category like '%university%'";
+                                 $getbugs = "SELECT * FROM diaryTable where category like '%university%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
                                          echo "<h3>". $row['name'] . "</h3>";
@@ -70,7 +70,7 @@
                      echo "<p>". $row['summary'] . "</p>";
                  }
              }elseif($_GET['category']=="family"){
-                                 $getbugs = "SELECT * FROM Bugs where category like '%Windows%'";
+                                 $getbugs = "SELECT * FROM diaryTable where category like '%Windows%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
                                          echo "<h3>". $row['name'] . "</h3>";
@@ -79,7 +79,7 @@
                  }
              }else{
 
-                 $getbugs = "SELECT * FROM Bugs";
+                 $getbugs = "SELECT * FROM diaryTable";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
                                          echo "<h3>". $row['name'] . "</h3>";
