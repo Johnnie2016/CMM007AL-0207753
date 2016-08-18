@@ -50,7 +50,7 @@
     </nav>
 
     <section class="grid-75">
-        <div id="bugshow">
+        <div id="diaryshow">
             <?php
                              include ("dbaseconn.php");
              if($_GET['bugcategory']=="android"){
