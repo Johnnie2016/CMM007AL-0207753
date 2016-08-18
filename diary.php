@@ -42,9 +42,9 @@
     <nav class="grid-25" id="Navigation">
         <ul>
             <li><a href="diary.php">All Diary Items</a></li><br>
-            <li><a href="diary.php?category=android">Work Items</a></li><br>
-            <li><a href="diary.php?category=iOS">University Items</a></li><br>
-            <li><a href="diary.php?category=windows">Family Items</a></li><br>
+            <li><a href="diary.php?category=work">Work Items</a></li><br>
+            <li><a href="diary.php?category=university">University Items</a></li><br>
+            <li><a href="diary.php?category=family">Family Items</a></li><br>
             <li><a href="add.php">Insert a Diary Item</a></li><br>
         </ul>
     </nav>
@@ -53,7 +53,7 @@
         <div id="diaryshow">
             <?php
                              include ("dbaseconn.php");
-             if($_GET['category']=="android"){
+             if($_GET['category']=="work"){
                                  $getbugs = "SELECT * FROM Bugs where category like '%work%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
@@ -69,8 +69,8 @@
                      echo "<h5>". $row['category'] . "</h5>";
                      echo "<p>". $row['summary'] . "</p>";
                  }
-             }elseif($_GET['category']=="windows"){
-                                 $getbugs = "SELECT * FROM Bugs where bugcategory like '%Windows%'";
+             }elseif($_GET['category']=="family"){
+                                 $getbugs = "SELECT * FROM Bugs where category like '%Windows%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
                                          echo "<h3>". $row['name'] . "</h3>";
