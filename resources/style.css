@@ -1,0 +1,57 @@
+h1 {
+    color: black;
+    font: arial;
+}
+
+h2 {
+    color: black;
+    font: arial;
+    font-weight: lighter;
+}
+
+p {
+    color: black;
+    font-size: x-large;
+}
+
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+}
+
+main{
+    max-width:960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    #Logo
+}
+
+
+nav{
+    font-size: x-large;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 25px;
+    padding-top: 6px;
+}
+
+li {
+
+
+}
+
+li a{
+    text-decoration: none;
+}
+
+footer{
+
+}
+footer p{
+    font-size: 18px;
+}
