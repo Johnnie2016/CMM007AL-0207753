@@ -42,9 +42,9 @@
     <nav class="grid-25" id="Navigation">
         <ul>
             <li><a href="diary.php">All Diary Items</a></li><br>
-            <li><a href="diary.php?bugcategory=android">Work Items</a></li><br>
-            <li><a href="diary.php?bugcategory=iOS">University Items</a></li><br>
-            <li><a href="diary.php?bugcategory=windows">Family Items</a></li><br>
+            <li><a href="diary.php?category=android">Work Items</a></li><br>
+            <li><a href="diary.php?category=iOS">University Items</a></li><br>
+            <li><a href="diary.php?category=windows">Family Items</a></li><br>
             <li><a href="add.php">Insert a Diary Item</a></li><br>
         </ul>
     </nav>
@@ -53,38 +53,38 @@
         <div id="diaryshow">
             <?php
                              include ("dbaseconn.php");
-             if($_GET['bugcategory']=="android"){
-                                 $getbugs = "SELECT * FROM Bugs where bugcategory like '%android%'";
+             if($_GET['category']=="android"){
+                                 $getbugs = "SELECT * FROM Bugs where category like '%work%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
-                                         echo "<h3>". $row['bugname'] . "</h3>";
-                     echo "<h5>". $row['bugcategory'] . "</h5>";
-                     echo "<p>". $row['bugsummary'] . "</p>";
+                                         echo "<h3>". $row['name'] . "</h3>";
+                     echo "<h5>". $row['category'] . "</h5>";
+                     echo "<p>". $row['summary'] . "</p>";
                  }
-             }elseif($_GET['bugcategory']=="ios"){
-                                 $getbugs = "SELECT * FROM Bugs where bugcategory like '%iOS%'";
+             }elseif($_GET['category']=="university"){
+                                 $getbugs = "SELECT * FROM Bugs where category like '%university%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
-                                         echo "<h3>". $row['bugname'] . "</h3>";
-                     echo "<h5>". $row['bugcategory'] . "</h5>";
-                     echo "<p>". $row['bugsummary'] . "</p>";
+                                         echo "<h3>". $row['name'] . "</h3>";
+                     echo "<h5>". $row['category'] . "</h5>";
+                     echo "<p>". $row['summary'] . "</p>";
                  }
-             }elseif($_GET['bugcategory']=="windows"){
+             }elseif($_GET['category']=="windows"){
                                  $getbugs = "SELECT * FROM Bugs where bugcategory like '%Windows%'";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
-                                         echo "<h3>". $row['bugname'] . "</h3>";
-                     echo "<h5>". $row['bugcategory'] . "</h5>";
-                     echo "<p>". $row['bugsummary'] . "</p>";
+                                         echo "<h3>". $row['name'] . "</h3>";
+                     echo "<h5>". $row['category'] . "</h5>";
+                     echo "<p>". $row['summary'] . "</p>";
                  }
              }else{
 
                  $getbugs = "SELECT * FROM Bugs";
                  $result = mysqli_query($db, $getbugs);
                  while ($row = mysqli_fetch_array($result)) {
-                                         echo "<h3>". $row['bugname'] . "</h3>";
-                     echo "<h5>". $row['bugcategory'] . "</h5>";
-                     echo "<p>". $row['bugsummary'] . "</p>";
+                                         echo "<h3>". $row['name'] . "</h3>";
+                     echo "<h5>". $row['category'] . "</h5>";
+                     echo "<p>". $row['summary'] . "</p>";
                  }
              }
              ?>

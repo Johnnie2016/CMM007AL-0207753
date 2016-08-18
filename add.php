@@ -25,9 +25,9 @@
     <nav class="grid-25" id="Navigation">
         <ul>
             <li><a href="diary.php">All Diary Items</a></li><br>
-            <li><a href="diary.php?bugcategory=android">Work Items</a></li><br>
-            <li><a href="diary.php?bugcategory=iOS">University Items</a></li><br>
-            <li><a href="diary.php?bugcategory=windows">Family Items</a></li><br>
+            <li><a href="diary.php?category=work">Work Items</a></li><br>
+            <li><a href="diary.php?category=university">University Items</a></li><br>
+            <li><a href="diary.php?category=family">Family Items</a></li><br>
             <li><a href="add.php">Insert a Diary Item</a></li><br>
         </ul>
     </nav>
@@ -42,20 +42,20 @@
                      <form class=\"form-input\" action='{$_SERVER['PHP_SELF']}' method='post' > 
   
                          <div class=\"field\" > 
-                             <label>Bug Name:</label> 
-                             <input type = \"text\" name = \"name\" id = \"name\" accesskey=\"1\" placeholder = \"Bug Name\" autofocus required > 
+                             <label>Title:</label>
+                             <input type = \"text\" name = \"title\" id = \"title\" accesskey=\"1\" placeholder = \"Entry Title\" autofocus required >
                          </div> 
                          <div class=\"field\" > 
-                             <label>Bug Summary:</label> 
-                             <textarea rows = \"5\" cols = \"28\" name = \"summary\" id = \"summary\" accesskey=\"2\" placeholder = \"Bug Summary\" required ></textarea> 
+                             <label>Entry Summary:</label>
+                             <textarea rows = \"5\" cols = \"28\" name = \"summary\" id = \"summary\" accesskey=\"2\" placeholder = \"Entry Summary\" required ></textarea>
                          </div> 
                          <div class=\"field\"> 
-                             <label>Bug Category:</label> 
+                             <label>Category:</label>
                              <select name = \"category\" id = \"category\" accesskey=\"3\" required> 
                                  <option value = \"\" disabled  selected >Select category..</option> 
-                                 <option value = \"work\" selected >Android</option> 
-                                 <option value = \"university\" >iOS</option> 
-                                 <option value = \"family\" >Windows</option> 
+                                 <option value = \"work\" selected >Work</option>
+                                 <option value = \"university\" >University</option>
+                                 <option value = \"family\" >Family</option>
                              </select> 
                          </div> 
                          <div class=\"field\" > 
@@ -72,7 +72,7 @@
                  {
                                  include_once('dbaseconn.php');
 
-                     $title = $_POST['name'];
+                     $title = $_POST['title'];
                      $summary = $_POST['summary'];
                      $category = $_POST['category'];
                      $submitter = $_POST['submitter'];
@@ -81,7 +81,7 @@
                                         $submitter = "Anonymous";
                      }
 
-                     $sql = "INSERT INTO bugView VALUES (NULL,'$name','$summary','$category','$submitter')";
+                     $sql = "INSERT INTO bugView VALUES (NULL,'$title','$summary','$category','$submitter')";
                      mysqli_query($db,$sql);
                      mysqli_close($db);
                      header('Location: add.php?category=all');

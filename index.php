@@ -25,9 +25,9 @@
     <nav class="grid-25" id="Navigation">
         <ul>
             <li><a href="diary.php">All Diary Items</a></li><br>
-            <li><a href="diary.php?bugcategory=android">Work Items</a></li><br>
-            <li><a href="diary.php?bugcategory=iOS">University Items</a></li><br>
-            <li><a href="diary.php?bugcategory=windows">Family Items</a></li><br>
+            <li><a href="diary.php?category=work">Work Items</a></li><br>
+            <li><a href="diary.php?category=university">University Items</a></li><br>
+            <li><a href="diary.php?category=family">Family Items</a></li><br>
             <li><a href="add.php">Insert a Diary Item</a></li><br>
         </ul>
     </nav>
